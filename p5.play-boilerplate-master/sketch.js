@@ -17,6 +17,7 @@ var gameState = 0;
 
 var PlayerCar = 0;
 var AICar = 0;
+var Player
 
 var youLose, youWin
 var youLoseImage, youWinImage
@@ -277,94 +278,27 @@ function draw() {
         Convertable.destroy();
 
       }
+     
     }
     console.log("PlayerCar = " + PlayerCar)
-    if ((PlayerCar == 1 && keyCode == 37)) {
-      Player.velocityX = -9
-
-
-    }
-    if ((PlayerCar == 1 && keyCode == 38)) {
-      Player.velocityY = -9
-
-    }
-    if ((PlayerCar == 1 && keyCode == 39)) {
-      Player.velocityX = 9
-
-    }
-    if ((PlayerCar == 1 && keyCode == 40)) {
-      Player.velocityY = 9
-
-    }
-    if ((PlayerCar == 2 && keyCode == 37)) {
-      Player.velocityX = -9
-
-
-    }
-    if ((PlayerCar == 2 && keyCode == 38)) {
-      Player.velocityY = -9
-
-    }
-    if ((PlayerCar == 2 && keyCode == 39)) {
-      Player.velocityX = 9
-
-    }
-    if ((PlayerCar == 2 && keyCode == 40)) {
-      Player.velocityY = 9
-
-    }
-    if ((PlayerCar == 3 && keyCode == 37)) {
-      Player.velocityX = -9
-
-
-    }
-    if ((PlayerCar == 3 && keyCode == 38)) {
-      Player.velocityY = -9
-
-    }
-    if ((PlayerCar == 3 && keyCode == 39)) {
-      Player.velocityX = 9
-
-    }
-    if ((PlayerCar == 3 && keyCode == 40)) {
-      Player.velocityY = 9
-
-    }
-    if ((PlayerCar == 4 && keyCode == 37)) {
-      Player.velocityX = -9
-
-
-    }
-    if ((PlayerCar == 4 && keyCode == 38)) {
-      Player.velocityY = -9
-
-    }
-    if ((PlayerCar == 4 && keyCode == 39)) {
-      Player.velocityX = 9
-
-    }
-    if ((PlayerCar == 4 && keyCode == 40)) {
-      Player.velocityY = 9
-
-    }
-    if ((PlayerCar == 5 && keyCode == 37)) {
-      Player.velocityX = -9
-
-
-    }
-    if ((PlayerCar == 5 && keyCode == 38)) {
-      Player.velocityY = -9
-
-    }
-    if ((PlayerCar == 5 && keyCode == 39)) {
-      Player.velocityX = 9
-
-    }
-    if ((PlayerCar == 5 && keyCode == 40)) {
-      Player.velocityY = 9
-
-    }
+    gameState=2
   }
-
+if(gameState==2){
+  background(GroundMapImage)
+  if(keyDown(LEFT_ARROW)){
+    Player.velocityX=-random(3,12)
+  }
+  if(keyDown(RIGHT_ARROW)){
+    Player.velocityX=random(3,12)
+  }
+  if(keyDown(UP_ARROW)){
+    Player.velocityY=-random(3,12)
+  }
+  if(keyDown(DOWN_ARROW)){
+    Player.velocityY=random(3,12)
+  }
+ // edges=createEdgeSprites()
+  //Player.bounceOff(edges)
+}
   drawSprites();
 }
